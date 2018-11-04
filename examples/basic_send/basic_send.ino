@@ -5,7 +5,7 @@
 
 #include "A6SmsLib.h"
 
-const String NUMBER = "0033673128710";
+const String NUMBER = "00336XXXXXXXX";
 const String MESSAGE = "whoop whoop!";
 
 const int rx = D1;
