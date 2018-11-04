@@ -1,5 +1,5 @@
 #include "Arduino.h"
-#include "A6.h"
+#include "A6SmsLib.h"
 #include <SoftwareSerial.h>
 
 A6SmsLib::A6SmsLib(int rx,int tx, int reset, int nbMaxAttempts) : _a6Serial(SoftwareSerial(rx,tx))
@@ -9,13 +9,19 @@ A6SmsLib::A6SmsLib(int rx,int tx, int reset, int nbMaxAttempts) : _a6Serial(Soft
   _reset = reset;
   _nbMaxAttempts = nbMaxAttempts;
   _state = "initing";
+  _allowDebugMessages = false;
+}
+
+void A6SmsLib::debug(bool allowDebugMessages)
+{
+  _allowDebugMessages = allowDebugMessages;
 }
 
 void A6SmsLib::debug(String message)
 {
-  #ifndef UNIT_TEST
-  //Serial.println("A6 - " + message);
-  #endif
+  if(_allowDebugMessages) {
+    Serial.println("A6 - " + message);
+  }
 }
 
 void A6SmsLib::begin(int baudrate)

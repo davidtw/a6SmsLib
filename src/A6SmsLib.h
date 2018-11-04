@@ -7,6 +7,7 @@ class A6SmsLib
 {
   public:
     A6SmsLib(int rx, int tx, int reset = -1, int nbMaxAttempts = 2);
+    void debug(bool allowDebugMessages = true);    
     void begin(int baudrate = 115200);    
     void sms(String number, String message);
     void sms(String number, String message, void(*callback)(void));
@@ -28,6 +29,7 @@ class A6SmsLib
     String _state;
     String _number;
     String _message;
+    bool _allowDebugMessages;
     
     SoftwareSerial _a6Serial;
     void resetState();

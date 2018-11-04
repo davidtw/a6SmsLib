@@ -1,11 +1,11 @@
 {
     "name": "A6SmsLib",
-    "keywords": "Ai Thinker A6 sms",
+    "keywords": "Ai Thinker, A6, sms, Serial, AT",
     "description": "Arduino Library for sending sms with the Ai Thinker A6 GSM module",
     "repository":
     {
       "type": "git",
-      "url": "https://github.com/milesburton/Arduino-Temperature-Control-Library.git"
+      "url": "https://github.com/davidtw/a6SmsLib"
     },
     "authors":
     [
